@@ -75,7 +75,7 @@ const carsData = [
   },
   {
     "level": 4,
-    "car_name": "Subaru Impreza",
+    "car_name": "Subaru Impreza & Chevrolet Camaro SS Competition",
     "variants": [
       {
         "type": "1/4 mile",
@@ -263,25 +263,8 @@ const carsData = [
   },
   {
     "level": 9,
-    "car_name": "Porsche 9ff GT9R & SSC Ultimate Aero",
+    "car_name": "SSC Ultimate Aero",
     "variants": [
-      {
-        "car_name": "Porsche 9ff GT9R (Car One Career)",
-        "type": "Both",
-        "time_1_4_mile": "7.966",
-        "time_1_2_mile": "11.854",
-        "mesin": "5-5-1-4-5-5",
-        "tune_gear": {
-          "nitrous": "2.200",
-          "final_drive": "3.440",
-          "gear_1": "1.470",
-          "gear_2": "1.170",
-          "gear_3": "1.073",
-          "gear_4": "0.984",
-          "gear_5": "0.903",
-          "gear_6": "0.828"
-        }
-      },
       {
         "car_name": "SSC Ultimate Aero (1/4 mile)",
         "type": "1/4 mile",
