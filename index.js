@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 
-// Database Mobil Drag Racing v5.6.2 (Top Rank A / Best Tunes)
+// Data Car Tune Drag Racing v5.6.2
 const carsData = [
   {
     "level": 1,
     "car_name": "Clio Sport V6",
     "time_1_4_mile": "12.393",
     "time_1_2_mile": "19.401",
-    "engine": "1-1-1-0-5-2",
+    "mesin": "1-1-1-0-5-2",
     "tune_gear": {
       "nitrous": "-",
       "final_drive": "4.800",
@@ -25,7 +25,7 @@ const carsData = [
     "car_name": "Mazda Rx-8",
     "time_1_4_mile": "10.552",
     "time_1_2_mile": "16.951",
-    "engine": "1-1-3-5-5-5",
+    "mesin": "1-1-3-5-5-5",
     "tune_gear": {
       "nitrous": "5.000",
       "final_drive": "4.780",
@@ -44,7 +44,7 @@ const carsData = [
       {
         "type": "1/2 mile",
         "time_1_2_mile": "15.712",
-        "engine": "2-1-3-5-5-5",
+        "mesin": "2-1-3-5-5-5",
         "tune_gear": {
           "nitrous": "3.500",
           "final_drive": "3.460",
@@ -59,7 +59,7 @@ const carsData = [
       {
         "type": "1/4 mile",
         "time_1_4_mile": "9.851",
-        "engine": "2-1-3-5-5-5",
+        "mesin": "2-1-3-5-5-5",
         "tune_gear": {
           "nitrous": "3.250",
           "final_drive": "3.460",
@@ -80,7 +80,7 @@ const carsData = [
       {
         "type": "1/4 mile",
         "time_1_4_mile": "9.349",
-        "engine": "5-5-5-5-5-5",
+        "mesin": "5-5-5-5-5-5",
         "tune_gear": {
           "nitrous": "2.900",
           "final_drive": "5.000",
@@ -94,7 +94,7 @@ const carsData = [
       {
         "type": "1/2 mile",
         "time_1_2_mile": "14.682",
-        "engine": "4-5-4-5-5-5",
+        "mesin": "4-5-4-5-5-5",
         "tune_gear": {
           "nitrous": "3.700",
           "final_drive": "3.450",
@@ -110,13 +110,13 @@ const carsData = [
   },
   {
     "level": 5,
-    "car_name": "Lancer Evo / Dodge Charger SRT-8",
+    "car_name": "Lancer Evo & Dodge Charger SRT-8",
     "variants": [
       {
         "car_name": "Lancer Evo",
         "type": "1/4 mile",
         "time_1_4_mile": "9.084",
-        "engine": "5-5-5-5-5",
+        "mesin": "5-5-5-5-5",
         "tune_gear": {
           "nitrous": "2.540",
           "final_drive": "5.000",
@@ -132,7 +132,7 @@ const carsData = [
         "car_name": "Dodge Charger SRT-8",
         "type": "1/2 mile",
         "time_1_2_mile": "14.300",
-        "engine": "5-5-5-5-5",
+        "mesin": "5-5-5-5-5",
         "tune_gear": {
           "nitrous": "2.680",
           "final_drive": "3.060",
@@ -147,13 +147,13 @@ const carsData = [
   },
   {
     "level": 6,
-    "car_name": "Lamborghini Gallardo / Brabus SLS 700",
+    "car_name": "Lamborghini Gallardo & Brabus SLS 700",
     "variants": [
       {
         "car_name": "Lamborghini Gallardo",
         "type": "1/4 mile",
         "time_1_4_mile": "8.528",
-        "engine": "4-3-3-5-5-5",
+        "mesin": "4-3-3-5-5-5",
         "tune_gear": {
           "nitrous": "2.650",
           "final_drive": "5.000",
@@ -169,7 +169,7 @@ const carsData = [
         "car_name": "Brabus SLS 700",
         "type": "1/2 mile",
         "time_1_2_mile": "13.472",
-        "engine": "5-5-5-5-5-5",
+        "mesin": "5-5-5-5-5-5",
         "tune_gear": {
           "nitrous": "2.800",
           "final_drive": "3.670",
@@ -186,13 +186,13 @@ const carsData = [
   },
   {
     "level": 7,
-    "car_name": "Ford RS2000 / Koenigsegg Agera R",
+    "car_name": "Ford RS2000 & Koenigsegg Agera R",
     "variants": [
       {
         "car_name": "Ford RS2000",
         "type": "1/4 mile",
         "time_1_4_mile": "7.848",
-        "engine": "2-3-2-5-5-5",
+        "mesin": "2-3-2-5-5-5",
         "tune_gear": {
           "nitrous": "2.390",
           "final_drive": "5.000",
@@ -207,7 +207,7 @@ const carsData = [
         "car_name": "Koenigsegg Agera R",
         "type": "1/2 mile",
         "time_1_2_mile": "12.619",
-        "engine": "1-2-1-0-5-5",
+        "mesin": "1-2-1-0-5-5",
         "tune_gear": {
           "nitrous": "-",
           "final_drive": "3.364",
@@ -224,13 +224,13 @@ const carsData = [
   },
   {
     "level": 8,
-    "car_name": "Lamborghini Murciélago LP 670-4 SV / Koenigsegg Agera R",
+    "car_name": "Lamborghini Murciélago LP 670-4 SV & Koenigsegg Agera R",
     "variants": [
       {
         "car_name": "Lamborghini Murciélago LP 670-4 SuperVeloce (SV)",
         "type": "1/4 mile",
         "time_1_4_mile": "7.733",
-        "engine": "5-5-5-5-5-5",
+        "mesin": "5-5-5-5-5-5",
         "tune_gear": {
           "nitrous": "2.000",
           "final_drive": "5.000",
@@ -246,7 +246,7 @@ const carsData = [
         "car_name": "Koenigsegg Agera R",
         "type": "1/2 mile",
         "time_1_2_mile": "11.965",
-        "engine": "5-5-2-4-5-5",
+        "mesin": "5-5-2-4-5-5",
         "tune_gear": {
           "nitrous": "2.700",
           "final_drive": "3.364",
@@ -263,13 +263,14 @@ const carsData = [
   },
   {
     "level": 9,
-    "car_name": "Porsche 9ff GT9R / SSC Ultimate Aero",
+    "car_name": "Porsche 9ff GT9R & SSC Ultimate Aero",
     "variants": [
       {
         "car_name": "Porsche 9ff GT9R (Car One Career)",
+        "type": "Both",
         "time_1_4_mile": "7.966",
         "time_1_2_mile": "11.854",
-        "engine": "5-5-1-4-5-5",
+        "mesin": "5-5-1-4-5-5",
         "tune_gear": {
           "nitrous": "2.200",
           "final_drive": "3.440",
@@ -283,8 +284,9 @@ const carsData = [
       },
       {
         "car_name": "SSC Ultimate Aero (1/4 mile)",
+        "type": "1/4 mile",
         "time_1_4_mile": "7.794",
-        "engine": "2-2-2-4-5-5",
+        "mesin": "2-2-2-4-5-5",
         "tune_gear": {
           "nitrous": "5.000",
           "final_drive": "3.398",
@@ -298,8 +300,9 @@ const carsData = [
       },
       {
         "car_name": "SSC Ultimate Aero (1/2 mile)",
+        "type": "1/2 mile",
         "time_1_2_mile": "11.589",
-        "engine": "2-5-2-1-5-5",
+        "mesin": "2-5-2-1-5-5",
         "tune_gear": {
           "nitrous": "2.000",
           "final_drive": "3.444",
@@ -318,7 +321,7 @@ const carsData = [
     "car_name": "SSC Tuatara",
     "time_1_4_mile": "7.568",
     "time_1_2_mile": "11.094",
-    "engine": "Not Specified",
+    "mesin": "5-5-5-5-5-5",
     "tune_gear": {
       "nitrous": "3.300",
       "final_drive": "3.360",
@@ -333,57 +336,45 @@ const carsData = [
   }
 ];
 
-// Endpoint Utama (Home)
+// Root endpoint (Welcome & Docs)
 app.get('/', (req, res) => {
   res.json({
-    status: "success",
-    game: "Drag Racing v5.6.2",
-    developer: "Supercharge Mobile",
+    game: "Drag Racing (Supercharge Mobile)",
+    version: "v5.6.2",
     endpoints: {
       getAllCars: "/api/cars",
-      searchCar: "/api/cars/search?q=query_name_or_level"
+      searchByLevel: "/api/cars?level=5",
+      searchByName: "/api/cars?name=skoda / skyline / agera / tuatara / etc"
     }
   });
 });
 
-// Endpoint untuk mengambil semua data mobil
+// Endpoint GET /api/cars with search filter (by level or car name)
 app.get('/api/cars', (req, res) => {
-  res.json({
-    status: "success",
-    total: carsData.length,
-    data: carsData
-  });
-});
+  const { level, name } = req.query;
+  let results = carsData;
 
-// Endpoint untuk SEARCH / Pencarian Mobil berdasarkan nama atau level
-app.get('/api/cars/search', (req, res) => {
-  const query = req.query.q ? req.query.q.toLowerCase() : '';
-  
-  if (!query) {
-    return res.status(400).json({
-      status: "error",
-      message: "Parameter pencarian 'q' tidak boleh kosong. Contoh: /api/cars/search?q=agera"
+  // Filter by level
+  if (level) {
+    results = results.filter(car => car.level === parseInt(level));
+  }
+
+  // Filter by name (case insensitive)
+  if (name) {
+    const queryName = name.toLowerCase();
+    results = results.filter(car => {
+      const matchMain = car.car_name && car.car_name.toLowerCase().includes(queryName);
+      const matchVariants = car.variants && car.variants.some(v => 
+        (v.car_name && v.car_name.toLowerCase().includes(queryName)) || 
+        (car.car_name && car.car_name.toLowerCase().includes(queryName))
+      );
+      return matchMain || matchVariants;
     });
   }
 
-  // Filter pencarian berdasarkan nama level, car_name, atau level angka
-  const results = carsData.filter(car => {
-    const matchLevel = car.level.toString() === query;
-    const matchName = car.car_name && car.car_name.toLowerCase().includes(query);
-    
-    // Cek juga dalam varian jika ada
-    const matchVariant = car.variants && car.variants.some(v => 
-      (v.car_name && v.car_name.toLowerCase().includes(query)) ||
-      (v.type && v.type.toLowerCase().includes(query))
-    );
-
-    return matchLevel || matchName || matchVariant;
-  });
-
   res.json({
-    status: "success",
-    query: query,
-    total_found: results.length,
+    success: true,
+    total: results.length,
     data: results
   });
 });
@@ -392,3 +383,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
