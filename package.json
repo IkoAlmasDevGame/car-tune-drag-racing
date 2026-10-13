@@ -1,0 +1,12 @@
+{
+  "name": "drag-racing-api",
+  "version": "1.0.0",
+  "description": "API for Drag Racing v5.6.2 Car Tunes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
